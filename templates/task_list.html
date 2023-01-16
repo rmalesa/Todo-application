@@ -1,0 +1,15 @@
+<html>
+<ul>
+
+    {% for task in user.task_set.all %}
+    <a href="{% url 'detail_task' task.pk %}">
+        <li>{{task.task}}</li>
+    </a>
+    {%endfor%}
+</ul>
+<a href="{% url 'add_task' %}">+add</a>
+<a href="{% url 'signup' %}">signup</a>
+<a href="{% url 'login' %}">login</a>
+<a href="{% url 'logout' %}">logout</a>
+
+</html>

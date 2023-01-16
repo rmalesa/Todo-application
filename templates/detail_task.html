@@ -1,0 +1,14 @@
+<html>
+<p>{{task.tasker}}</p>
+<p>{{task.task}} </p>
+<p>{{task.complete}}</p>
+{% if not task.complete %}
+<form action="{% url 'detail_task' task.pk %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="complete task">
+</form>
+<a href="{% url 'edit_task' task.pk %}">edit</a>
+{% endif %}
+<a href="{% url 'delete_task' task.pk %}">delete</a>
+
+</html>
