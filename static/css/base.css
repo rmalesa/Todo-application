@@ -1,0 +1,200 @@
+body {
+    background-color: rgb(14, 14, 14);
+}
+
+a,
+.table {
+    color: rgb(216, 216, 216);
+    border-color: rgb(226, 226, 226);
+}
+
+a:hover {
+    color: rgb(211, 72, 72);
+    transition: 1s;
+}
+
+.badge {
+    background-color: rgb(169, 112, 216);
+}
+
+.card {
+    background-color: rgb(24, 24, 24);
+}
+
+.link-btn {
+    background: none;
+    border: none;
+}
+
+/* ############################################################ */
+
+.fields {
+    background-color: rgb(206, 204, 218);
+    color: rgb(7, 7, 7);
+}
+
+.fields::placeholder {
+    color: rgb(83, 79, 100);
+}
+
+#form .fields,
+.btn {
+    position: relative;
+    margin-top: 10px;
+    border-radius: 10px;
+    min-height: 40px;
+}
+
+button.btn {
+    background-color: rgb(211, 72, 72);
+}
+
+button.btn:hover {
+    background-color: rgb(211, 53, 53);
+}
+
+.container-1 {
+    background-color: rgb(37, 37, 37);
+    color: aliceblue;
+    width: 85%;
+    padding: 30px;
+    margin-top: 25%;
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.form-ex {
+    position: relative;
+    text-align: center;
+    color: rgb(215, 215, 250);
+}
+
+h2.form-ex {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    margin-bottom: 10px;
+}
+
+.side-bar {
+    background-color: rgb(24, 24, 24);
+    color: rgb(224, 224, 224);
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    font-size: larger;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.side-bar-expand {
+    background-color: rgb(24, 24, 24);
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: larger;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.side-bar-expand a li:hover {
+    color: rgb(211, 72, 72);
+    transition: 1s;
+}
+
+li {
+    list-style-type: none;
+    font-size: larger;
+    margin-left: -30px;
+    display: block;
+    color: rgb(226, 226, 226);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 32px 32px;
+    overflow: hidden;
+    padding: 12px 10px 12px 60px;
+    transition: 1s;
+}
+
+li[data-image="logout"] {
+    background-image: url('/static/img/logout.png');
+}
+
+li[data-image="login"] {
+    background-image: url('/static/img/login.png');
+}
+
+li[data-image="signup"] {
+    background-image: url('/static/img/signup.png');
+}
+
+li[data-image="home"] {
+    background-image: url('/static/img/home.png');
+}
+
+li[data-image="add"] {
+    background-image: url('/static/img/add.png');
+}
+
+li[data-image="menu"] {
+    background-image: url('/static/img/menu.png');
+}
+
+@media only screen and (min-width: 768px) {
+    .side-bar {
+        padding: 10px;
+        height: 100%;
+        width: 70px;
+    }
+
+
+    .side-bar-expand {
+        text-align: left;
+        width: 200px;
+    }
+
+    .side-bar li {
+        list-style-type: none;
+        font-size: larger;
+        margin-left: -30px;
+        display: block;
+        color: rgb(226, 226, 226);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 32px 32px;
+        overflow: hidden;
+        padding: 12px 10px 12px 60px;
+        transition: 1s;
+    }
+
+    #form.container-1 {
+        width: 350px;
+        margin: 10% auto;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #add-form.container-1 {
+        margin: 10% auto;
+    }
+
+    h2.form-ex {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}

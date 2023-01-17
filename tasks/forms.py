@@ -7,7 +7,7 @@ class AddForm(forms.ModelForm):
         widget=forms.Textarea(
             attrs={
                 "placeholder": "Enter Your Task",
-                "class": "sumthg",
+                "class": "form-control fields",
             }
         )
     )

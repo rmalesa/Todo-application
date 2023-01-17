@@ -1,8 +1,15 @@
-<html>
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p }}
-    <input type="submit" value="confirm">
-</form>
+{% extends 'base.html'%}
 
-</html>
+
+{% block content %}
+<div id="add-form" class="container-1">
+    <form action="" method="post">
+        {%for field in form%}
+        {% csrf_token %}
+        <span style="color: aliceblue;">{{field.label}}:</span>
+        {{field}}
+        {% endfor%}
+        <button type="submit" class="btn btn-primary col-sm-3">Save</button>
+    </form>
+</div>
+{% endblock content %}

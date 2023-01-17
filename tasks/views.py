@@ -13,9 +13,12 @@ from .forms import AddForm
 from .models import Task
 
 
-class HomePage(ListView):
+class HomePage(LoginRequiredMixin, ListView):
     model = Task
     template_name = "task_list.html"
+
+    def get_queryset(self):
+        return Task.objects.filter(tasker=self.request.user).order_by("-date")
 
 
 class AddTask(LoginRequiredMixin, CreateView):
@@ -25,6 +28,7 @@ class AddTask(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.tasker = self.request.user
+        form.instance.task = form.instance.task.capitalize()
         return super().form_valid(form)
 
 
@@ -36,7 +40,7 @@ class TaskDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
         task = self.get_object()
         task.complete = True
         task.save()
-        return redirect(reverse_lazy("detail_task", kwargs={"pk": task.pk}))
+        return redirect(reverse_lazy("home"))
 
     def test_func(self):
         object = self.get_object()

@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Task(models.Model):
     tasker = models.ForeignKey(User, on_delete=models.CASCADE)
     task = models.TextField(max_length=255, null=True)
+    date = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False)
 
     def get_absolute_url(self):

@@ -12,3 +12,4 @@ class SignupView(CreateView):
 
 class CLoginView(LoginView):
     authentication_form = CustomUserLoginForm
+    form_class = CustomUserLoginForm
