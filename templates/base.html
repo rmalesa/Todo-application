@@ -62,32 +62,22 @@
 <!-- MDB -->
 
 <body>
+    {% if user.is_authenticated %}
     <div id="menu" class="side-bar">
         <ul>
+
             <li data-image="menu">Menu</li>
             <a href="{% url 'home' %}">
                 <li data-image="home">Home</li>
             </a>
-            {% if user.is_authenticated %}
-            <a href="{% url 'add_task' %}">
-                <li data-image="add">Add</li>
-            </a>
             <a href="{% url 'logout' %}">
                 <li data-image="logout">logout</li>
             </a>
-            {% else %}
-            <a href="{% url 'login' %}">
-                <li data-image="login">login</li>
-            </a>
 
-            <a href="{% url 'signup' %}">
 
-                <li data-image="signup">signup
-                </li>
-            </a>
-            {% endif %}
         </ul>
     </div>
+    {% endif %}
     {% block content %}
     {% endblock content %}
 </body>

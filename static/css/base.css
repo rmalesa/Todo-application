@@ -145,10 +145,6 @@ li[data-image="home"] {
     background-image: url('/static/img/home.png');
 }
 
-li[data-image="add"] {
-    background-image: url('/static/img/add.png');
-}
-
 li[data-image="menu"] {
     background-image: url('/static/img/menu.png');
 }
