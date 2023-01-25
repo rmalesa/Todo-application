@@ -1,10 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    pro_pic = models.ImageField(default="default.jpg", upload_to="profile_pic")
-
-    def __str__(self) -> str:
-        return self.user.username
+class CustomUser(AbstractUser):
+    profile_pic = models.ImageField(default="default.jpg", upload_to="profile_pic")

@@ -1,9 +1,10 @@
 from django.contrib.auth import password_validation
-from django.contrib.auth.models import User
+from .models import CustomUser
 from django.contrib.auth.forms import (
     AuthenticationForm,
     UsernameField,
     UserCreationForm,
+    UserChangeForm,
 )
 from django.utils.translation import gettext_lazy as _
 from django import forms
@@ -78,5 +79,41 @@ class CustomSignUpForm(UserCreationForm):
     )
 
     class Meta:
-        model = User
+        model = CustomUser
         fields = ("username", "email")
+
+
+class CustomChangeUserForm(forms.ModelForm):
+    username = UsernameField(
+        widget=forms.TextInput(
+            attrs={
+                "autofocus": True,
+                "placeholder": "Username",
+                "class": "form-control fields",
+            }
+        )
+    )
+    email = forms.EmailField(
+        label=_("Email"),
+        widget=forms.EmailInput(
+            attrs={
+                "placeholder": "Email",
+                "class": "form-control fields",
+            }
+        ),
+    )
+    profile_pic = forms.ImageField(
+        label=("Add profile_pic"),
+        widget=forms.FileInput(
+            attrs={
+                "placeholder": "File",
+                "class": "form-control fields",
+                "accept": "image/*",
+            }
+        ),
+    )
+
+    class Meta:
+        model = CustomUser
+        fields = ("profile_pic", "username", "email")
+        field_classes = {"username": UsernameField}

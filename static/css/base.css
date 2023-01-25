@@ -193,4 +193,16 @@ li[data-image="menu"] {
         margin-top: 20px;
         margin-bottom: 10px;
     }
+
+    #profile.container-1 {
+        width: 50%;
+        position: relative;
+        margin: 0 auto;
+        background-color: rgb(54, 54, 54);
+    }
+
+    .img {
+        position: relative;
+        margin-left: 30%;
+    }
 }
