@@ -1,8 +1,3 @@
-# Todo-appliction
-todo application based on django
-
-[icons](https://www.flaticon.com/): icons were used from this site
-
 # 👋Introduction
 Welcome to our Django to-do application's README page! You've come to the right place if you're looking for a dependable and effective task management solution. Our application, which is based on the Django web framework and django restframework, is made to assist you in keeping your work organised and productive.
 
