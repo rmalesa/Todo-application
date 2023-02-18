@@ -53,4 +53,4 @@ python manage.py runserver
 - [Django REST framework](https://www.django-rest-framework.org/):Django REST framework is a powerful and flexible toolkit for building Web APIs.
 
 # License
-This project is licensed under the MIT license - see [`License`](LICENSE.txt) file for details.
+This project is licensed under the MIT license - see [`License`](LICENSE) file for details.
