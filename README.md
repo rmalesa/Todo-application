@@ -50,7 +50,7 @@ python manage.py runserver
 - [Django](https://www.djangoproject.com/): Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
 - [Flaticon](https://www.flaticon.com/): Icons used in this project are from flaticon 
 
--[Django REST framework](https://www.django-rest-framework.org/):Django REST framework is a powerful and flexible toolkit for building Web APIs.
+- [Django REST framework](https://www.django-rest-framework.org/):Django REST framework is a powerful and flexible toolkit for building Web APIs.
 
 # License
 This project is licensed under the MIT license - see [`License`](LICENSE.txt) file for details.
