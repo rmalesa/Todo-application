@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "api.apps.ApiConfig",
     "rest_framework",
     "rest_framework.authtoken",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
@@ -135,6 +136,9 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
     ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
 }
 
 
@@ -154,6 +158,6 @@ LOGOUT_REDIRECT_URL = "home"
 # SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "http://127.0.0.1").split(
-    ","
-)
+CSRF_TRUSTED_ORIGINS = os.environ.get(
+    "CSRF_TRUSTED_ORIGINS", "http://127.0.0.1"
+).split(",")
